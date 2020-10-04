@@ -710,7 +710,7 @@ public abstract class CameraBaseEngine extends CameraEngine {
             public void run() {
                 // Compute a new camera preview size and apply.
                 Size newSize = computePreviewStreamSize();
-                if (newSize.equals(mPreviewStreamSize)) {
+                if (newSize.equals(mPreviewStreamSize) || isTakingVideo()) {
                     LOG.i("onSurfaceChanged:",
                             "The computed preview size is identical. No op.");
                 } else {
